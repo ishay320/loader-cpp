@@ -2,3 +2,4 @@ testes/plugin.so
 testes/main
 testes/loader.o
 .vscode
+build

@@ -1,15 +1,23 @@
 #pragma once
+#include <memory>
 #include <string>
 
-class Plug
+class BaseInterface
 {
    public:
-    Plug()  = default;
-    ~Plug() = default;
+    BaseInterface()      = default;
+    ~BaseInterface()     = default;
+    virtual bool start() = 0;
+    virtual bool stop()  = 0;
+};
 
-    virtual void print(const std::string &host) = 0;
-    virtual bool start()                        = 0;
-    virtual bool stop()                         = 0;
+class CameraInterface
+{
+   public:
+    CameraInterface()                        = default;
+    ~CameraInterface()                       = default;
+    virtual std::shared_ptr<void> getImage() = 0;
 
-    virtual std::string name() = 0;
+   private:
+    std::shared_ptr<void> frame;
 };
