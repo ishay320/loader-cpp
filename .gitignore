@@ -3,3 +3,4 @@ testes/main
 testes/loader.o
 .vscode
 build
+subprojects

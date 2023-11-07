@@ -43,6 +43,8 @@ class Plugin
 
     std::shared_ptr<void> construct();
 
+    std::string name() { return _plug.name; }
+
    private:
     PluginInfo _plug;
 
