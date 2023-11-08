@@ -34,7 +34,7 @@ class Plugin
             return nullptr;
         }
 
-        return static_cast<Interface*>(_object.get());
+        return static_cast<Interface*>(it->second(_object.get()));
     }
 
     std::vector<std::string> getAllInterfaces();
